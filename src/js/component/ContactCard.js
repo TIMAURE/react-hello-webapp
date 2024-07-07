@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import MikePhoto from "../../img/MikePhoto.jpg";
+import { PropTypes } from "prop-types";
+import { MikePhoto } from "../../img/MikePhoto.jpg";
+import { Context } from "../store/appContext";
 
 export const ContactCard = props => {
-	const [state, setState] = useState({
-		
-	});
+    const [ state, setState] = useState ({});
 
-	return (
-		<li className="list-group-item">
+    return (
+        <li className="list-group-item">
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src="" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
+					<img src={MikePhoto} alt="Mike " className="rounded-circle mx-auto d-block img-fluid" />
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
@@ -32,7 +31,7 @@ export const ContactCard = props => {
 						className="fa fa-phone fa-fw text-muted mr-3"
 						data-toggle="tooltip"
 						title=""
-						data-original-title="(870) 288-4149"
+						data-original-title="(0251) 237-5823"
 					/>
 					<span className="text-muted small">{props.phone}</span>
 					<br />
@@ -46,20 +45,18 @@ export const ContactCard = props => {
 				</div>
 			</div>
 		</li>
-	);
+
+    );
 };
-
-
-ContactCard.propTypes = {
+ContactCard.prototype ={
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
 	onUpdate: PropTypes.func,
-	name: PropTypes.string,
 	email: PropTypes.string,
+	name: PropTypes.string,
 	phone: PropTypes.string,
 	address: PropTypes.string
 };
-
-ContactCard.defaultProps = {
+ContactCard.defaulProps ={
 	onDelete: null
 };

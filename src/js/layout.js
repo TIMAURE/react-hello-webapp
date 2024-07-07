@@ -1,15 +1,14 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+
+import { Home } from "./views/home"
 import injectContext from "./store/appContext";
 import { Contacts } from "./views/Contacts.js";
+import { ContactCard} from "./views/Addcontact.js";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+
+
 
 //create your first component
 const Layout = () => {
@@ -20,16 +19,18 @@ const Layout = () => {
 	return (
 		<div>
 			<BrowserRouter basename={basename}>
-				<ScrollToTop>
-					<Navbar />
-					<Routes>
-						<Route path="/" element={<Contacts/>} />
-						<Route path="/demo" element={<Demo />} />
-						<Route path="/single/:theid" element={<Single />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
-					</Routes>
-					<Footer />
-				</ScrollToTop>
+				
+					<Switch>
+					
+					<Route path="/index.html" component={Contacts} />
+						<Route path="/" component={Contacts} />
+						<Route path="/contacts" component={Contacts} />
+						<Route path="/add" component={ContactCard} />
+						<Route path="/edit" component={ContactCard} />
+						<Route render={()=> <h1 className="notfound">Not found!</h1>}/>
+					
+					</Switch>
+				
 			</BrowserRouter>
 		</div>
 	);

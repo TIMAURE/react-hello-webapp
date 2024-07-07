@@ -4,10 +4,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			
-			listContacts: [],
+			listContacts: [
+				
+			],
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
+			
 			
 			getContacts: async () => {				
 				try{
@@ -26,12 +28,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 			} catch (error)
 					{console.error(error)}
 				},
-			    /**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+			   
+				
 			
 				createOneContact: newContact => {
-					fetch("https://playground.4geeks.com/apis/fake/contact", {
+					fetch("https://playground.4geeks.com/contact/agendas/TIMAURE/contact", {
 						method: "POST",
 						body: JSON.stringify({
 							full_name: `${newContact.name}`,
@@ -52,18 +53,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 						.catch(error => console.log(error));
 				},
 				deleteOneContact: id => {
-					fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+					fetch(`https://playground.4geeks.com/contact/agendas/TIMAURE/contact/${id}`, {
 						method: "DELETE"
 	
-						// headers: {
-						// 	"Content-Type": "application/json"
-						// }
+						
 					})
 						.then(response => response.json())
 						.then(data => {
 							console.log(data);
 							getActions().getAllAgenda();
-						}) // .then(data => setStore({ listContacts: data }))
+						}) 
 						.catch(error => console.log(error));
 				},
 	

@@ -118,7 +118,7 @@ export const ModalUpdate = props => {
 		</div>
     );
 };
-ModalUpdate.PropTypes = {
+ModalUpdate.propTypes = {
     history: PropTypes.object,
     onclose: PropTypes.func,
     show: PropTypes.bool,

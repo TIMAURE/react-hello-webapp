@@ -18,7 +18,7 @@ export const Contacts = () => {
 
 	useEffect(() => {
 		// const listContacts =
-		actions.getAllAgenda();
+		actions.getContacts();
 	}, []);
 	console.log(store.listContacts);
 
@@ -35,7 +35,7 @@ export const Contacts = () => {
 						{store.listContacts.map(item => (
 							<ContactCard
 								key={item.id}
-								name={item.full_name}
+								name={item.name}
 								address={item.address}
 								phone={item.phone}
 								email={item.email}
@@ -54,7 +54,7 @@ export const Contacts = () => {
 			/> */}
 			<ModalUpdate
 				id={state.id}
-				name={store.listContacts.find(contact => contact.id === state.id)?.full_name || ""}
+				name={store.listContacts.find(contact => contact.id === state.id)?.name || ""}
 				email={store.listContacts.find(contact => contact.id === state.id)?.email || ""}
 				phone={store.listContacts.find(contact => contact.id === state.id)?.phone || ""}
 				address={store.listContacts.find(contact => contact.id === state.id)?.address || ""}

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { withRouter } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+
 import { PropTypes } from "prop-types";
-import { MikePhoto } from "../../img/MikePhoto.jpg";
+
 import { Context } from "../store/appContext";
 
 export const ContactCard = props => {
@@ -11,7 +11,7 @@ export const ContactCard = props => {
         <li className="list-group-item">
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src={MikePhoto} alt="Mike " className="rounded-circle mx-auto d-block img-fluid" />
+					<img src= "https://upload.wikimedia.org/wikipedia/commons/1/1b/Curiosidades_con_Mike.jpg" alt="Mike " className="rounded-circle mx-auto d-block img-fluid" />
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">

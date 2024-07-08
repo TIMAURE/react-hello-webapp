@@ -4,9 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			
-			listContacts: [
-				
-			],
+			listContacts: [],
 		},
 		actions: {
 			
@@ -18,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					`https://playground.4geeks.com/contact/agendas/TIMAURE`);
 				
 				if(response.status == 404){
-					await getActions().createAgenda();
+					await getActions(createAgenda());
 				}
 				if(!response.ok){
 					throw `API error: ${response.statusText}`;
@@ -90,8 +88,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 							getActions().getAllAgenda();
 						})
 						.catch(error => console.log(error));
-				}
+				},
+				createAgenda: async () => {				
+					try{
+					
+					const response = await fetch (
+						`https://playground.4geeks.com/contact/agendas/TIMAURE`,
+						{method: "POST",
+							headers: {
+								"Content-Type": "application/json"
+							}
+						});
+						
+						if(!response.ok){
+						throw `API error: ${response.statusText}`;
+					}
+					const data = await response.json()
+						
+				} catch (error)
+						{console.error(error)}
+					},
+				   
 			}
+
 		};
 	};
 	

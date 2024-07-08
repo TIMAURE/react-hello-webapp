@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import MikePhoto from "../../img/MikePhoto.jpg";
 
-export const ContactCard = props => {
+import PropTypes from "prop-types";
+
+
+export const AddContact = props => {
 	const [state, setState] = useState({
 		
 	});
@@ -50,7 +50,7 @@ export const ContactCard = props => {
 };
 
 
-ContactCard.propTypes = {
+AddContact.propTypes = {
 	history: PropTypes.object,
 	onDelete: PropTypes.func,
 	onUpdate: PropTypes.func,
@@ -60,6 +60,6 @@ ContactCard.propTypes = {
 	address: PropTypes.string
 };
 
-ContactCard.defaultProps = {
+AddContact.defaultProps = {
 	onDelete: null
 };

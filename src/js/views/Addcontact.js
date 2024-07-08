@@ -3,10 +3,27 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 
-export const AddContact = props => {
-	const [state, setState] = useState({
+export const AddContact = (props) => {
+	const [name, setName] = useState(props.name || "");
+	const [email, setEmail] = useState(props.email || "");
+	const [phone, setPhone] = useState(props.phone || "");
+	const [address, setAddress] = useState(props.address || "");
+  
+	const handleAddContact = async () => {
+	  const newContact = {
+		full_name: name,
+		email: email,
+		agenda_slug: "TIMAURE",
+		address: address,
+		phone: phone
+	  };
+	  
+	  const result = await createContact(newContact);
+	  if (result) {
 		
-	});
+		console.log('Contacto agregado exitosamente:', result);
+	  }
+	};
 
 	return (
 		<li className="list-group-item">
@@ -68,7 +85,7 @@ export const AddContact = props => {
 								onChange={e => setEmail(e.target.value)}
 							/></span>
 							<br></br>
-							<button type="button" className="btn btn-primary" >
+							<button type="button" className="btn btn-primary" onClick={handleAddContact} >
             Add Contact
           </button>
 				</div>

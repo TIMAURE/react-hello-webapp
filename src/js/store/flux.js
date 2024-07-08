@@ -33,7 +33,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch("https://playground.4geeks.com/contact/agendas/TIMAURE/contact", {
 						method: "POST",
 						body: JSON.stringify({
-							full_name: `${newContact.name}`,
+							name: `${newContact.name}`,
 							email: `${newContact.email}`,
 							agenda_slug: `${newContact.agenda_slug}`,
 							address: `${newContact.address}`,
@@ -68,7 +68,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					fetch(`https://playground.4geeks.com/contact/agendas/TIMAURE/contacts/${id}`, {
 						method: "PUT",
 						body: JSON.stringify({
-							full_name: `${data.name}`,
+							name: `${data.name}`,
 							email: `${data.email}`,
 							agenda_slug: `${data.agenda_slug}`,
 							address: `${data.address}`,

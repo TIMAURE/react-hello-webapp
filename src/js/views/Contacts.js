@@ -47,11 +47,7 @@ export const Contacts = () => {
 				</div>
 			</div>
 			<Modal id={state.id} show={state.showModal} onClose={() => setState({ showModal: false })} />
-			{/* <ModalUpdate
-				id={state.id}
-				show={state.showModalUpdate}
-				onClose={ac => setState({ showModalUpdate: false })}
-			/> */}
+			
 			<ModalUpdate
 				id={state.id}
 				name={store.listContacts.find(contact => contact.id === state.id)?.name || ""}

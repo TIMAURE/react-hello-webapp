@@ -45,8 +45,10 @@ export const ContactCard = props => {
 				</div>
 			</div>
 		</li>
-
+		
+         
     );
+	
 };
 ContactCard.prototype ={
 	history: PropTypes.object,

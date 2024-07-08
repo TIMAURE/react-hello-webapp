@@ -28,7 +28,7 @@ export const Modal = Props => {
 						)}
 					</div>
 					<div className="modal-body">
-						<p>Warning: unknown consequences after this point... Kidding!</p>
+						<p>Warning: Changes made are applied after this point...</p>
 					</div>
 					<div className="modal-footer">
 						<button
@@ -37,7 +37,7 @@ export const Modal = Props => {
 							}}
 							type="button"
 							className="btn btn-primary">
-							Oh no!
+							Cancel
 						</button>
 						<button
 							onClick={() => {
@@ -47,7 +47,8 @@ export const Modal = Props => {
 							type="button"
 							className="btn btn-secondary"
 							data-dismiss="modal">
-							Do it!
+							
+Confirm
 						</button>
 					</div>
 				</div>

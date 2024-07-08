@@ -12,7 +12,7 @@ export const AddContact = props => {
 		<li className="list-group-item">
 			<div className="row w-100">
 				<div className="col-12 col-sm-6 col-md-3 px-0">
-					<img src="" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
+					<img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Curiosidades_con_Mike.jpg" alt="Mike Anamendolla" className="rounded-circle mx-auto d-block img-fluid" />
 				</div>
 				<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
 					<div className=" float-right">
@@ -23,10 +23,22 @@ export const AddContact = props => {
 							<i className="fas fa-trash-alt" />
 						</button>
 					</div>
-					<label className="name lead">{props.name}</label>
+					<span className=" text-muted"> <input
+								type="text"
+								value={props.name}
+								className="form-control"
+								placeholder="Full Name"
+								onChange={e => setName(e.target.value)}
+							/></span>
 					<br />
 					<i className="fas fa-map-marker-alt text-muted mr-3" />
-					<span className="text-muted">{props.address}</span>
+					<span className="text-muted"><input
+								type="text"
+								value={props.address}
+								className="form-control"
+								placeholder="Enter address"
+								onChange={e => setAddress(e.target.value)}
+							/></span>
 					<br />
 					<span
 						className="fa fa-phone fa-fw text-muted mr-3"
@@ -34,7 +46,13 @@ export const AddContact = props => {
 						title=""
 						data-original-title="(870) 288-4149"
 					/>
-					<span className="text-muted small">{props.phone}</span>
+					<span className="text-muted small"><input
+								type="phone"
+								value={props.phone}
+								className="form-control"
+								placeholder="Enter phone"
+								onChange={e => setPhone(e.target.value)}
+							/></span>
 					<br />
 					<span
 						className="fa fa-envelope fa-fw text-muted mr-3"
@@ -42,7 +60,17 @@ export const AddContact = props => {
 						data-original-title=""
 						title=""
 					/>
-					<span className="text-muted small text-truncate">{props.email}</span>
+					<span className="text-muted small text-truncate"><input
+								type="email"
+								value={props.email}
+								className="form-control"
+								placeholder="Enter email"
+								onChange={e => setEmail(e.target.value)}
+							/></span>
+							<br></br>
+							<button type="button" className="btn btn-primary" >
+            Add Contact
+          </button>
 				</div>
 			</div>
 		</li>

@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						body: JSON.stringify({
 							name: `${newContact.name}`,
 							email: `${newContact.email}`,
-							agenda_slug: `${newContact.agenda_slug}`,
+							agenda_slug: `${newContact.TIMAURE}`,
 							address: `${newContact.address}`,
 							phone: `${newContact.phone}`
 						}),
@@ -70,7 +70,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						body: JSON.stringify({
 							name: `${data.name}`,
 							email: `${data.email}`,
-							agenda_slug: `${data.agenda_slug}`,
+							agenda_slug: `${data.TIMAURE}`,
 							address: `${data.address}`,
 							phone: `${data.phone}`
 						}),
@@ -89,31 +89,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						})
 						.catch(error => console.log(error));
 				},
-				 createContact: async (contact) => {
-					try {
-					  const response = await fetch(
-						'https://playground.4geeks.com/contact/agendas/TIMAURE/contacts',
-						{
-						  method: 'POST',
-						  headers: {
-							'Content-Type': 'application/json'
-						  },
-						  body: JSON.stringify(contact)
-						}
-					  );
-				  
-					  if (!response.ok) {
-						throw new Error(`API error: ${response.statusText}`);
-					  }
-				  
-					  const data = await response.json();
-					  console.log('Contacto creado exitosamente:', data);
-					  return data;
-				  
-					} catch (error) {
-					  console.error('Error al crear el contacto:', error);
-					}
-				  },
+				 
 				createAgenda: async () => {				
 					try{
 					

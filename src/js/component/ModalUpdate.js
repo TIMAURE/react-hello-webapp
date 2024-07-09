@@ -100,7 +100,7 @@ export const ModalUpdate = props => {
 							}}
 							type="button"
 							className="btn btn-primary">
-							Confirm
+							Cancel
 						</button>
 						<button
 							onClick={() => {
@@ -110,7 +110,7 @@ export const ModalUpdate = props => {
 							type="button"
 							className="btn btn-secondary"
 							data-dismiss="modal">
-							Cancel
+							Confirm
 						</button>
 					</div>
 				</div>

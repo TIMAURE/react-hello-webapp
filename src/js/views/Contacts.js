@@ -13,13 +13,15 @@ export const Contacts = () => {
 		showModalUpdate: false,
 		id: null
 	});
-
+    const[idContact, setIdContact] = useState("");
 	const { store, actions } = useContext(Context);
 
 	useEffect(() => {
 		// const listContacts =
 		actions.getContacts();
+		console.log(idContact);
 	}, []);
+	
 	console.log(store.listContacts);
 
 	return (
@@ -41,6 +43,7 @@ export const Contacts = () => {
 								email={item.email}
 								onDelete={() => setState({ showModal: true, id: item.id })}
 								onUpdate={() => setState({ showModalUpdate: true, id: item.id })}
+								
 							/>
 						))}
 					</ul>
